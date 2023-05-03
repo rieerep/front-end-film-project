@@ -2,6 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components';
 import Hero from './Hero';
 import CardList from './CardList';
+import PersonList from './PersonList';
 
 
 // deklarera style-component
@@ -25,6 +26,7 @@ function App() {
       <h1>Rille</h1>
       <StyledPara>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis!</StyledPara>
       <Hero />
+      <PersonList />
       <CardList />
       {/* {myMovies.map(function (movie) { return <Card title={movie.title} description={movie.description} poster={movie.poster} /> })} */}
       {/* {myMovies.map(movie => <Card title={movie.title} description={movie.description} poster={movie.poster} />)} */}
