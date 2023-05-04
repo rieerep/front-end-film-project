@@ -4,14 +4,12 @@ import axios from "axios";
 import Card from './Card';
 import falling_down from './assets/down_fall.jpg'
 
-const GET_PERSON = "http://localhost:5106/persons"
+const GET_PERSON = "http://localhost:5107/persons"
 const POSTER_PREURL = ""
 // Function CardList (props) {
 function PersonList(props) {
     const [data, setData] = React.useState([]);
-
-    // TMDB-key cb362116c7c70793fce05c7369dc033c
-
+    
     React.useEffect(() => {
         const fetchData = async () => {
             const result = await axios(GET_PERSON);
