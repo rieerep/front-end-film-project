@@ -2,16 +2,19 @@ import React from "react";
 import styled from "styled-components";
 
 
-const CardContainer = styled.div`
+const PersonContainer = styled.div`
 display: flex;
-flex-direction: column;
-justify-content: space-around;
+flex-direction: row;
+justify-content: space-evenly;
 align-items: center;
-background: red;
+background: #92e87c;
 border: 1px black;
-height: 20em;
-width: 20em;
+height: 4em;
+width: 100vw;
 margin-bottom: 1em;
+&:hover {
+    background-color: #22331e;
+};
 `;
 
 const CardImage = styled.img`
@@ -19,16 +22,15 @@ object-fit: cover;
 height: 10em;
 `;
 
-function Card(props) {
+function Person(props) {
     console.log(props);
 
     return (
-        <CardContainer>
-             <h1>{props.title}</h1>
-            <CardImage src={props.poster} alt="Falling Down" />
-            <p>{props.description}</p>
-        </CardContainer>
+        <PersonContainer>
+            <h1>{props.firstName} {props.lastName}</h1>
+            <p>{props.email}</p>
+        </PersonContainer>
     );
 }
 
-export default Card;
+export default Person;

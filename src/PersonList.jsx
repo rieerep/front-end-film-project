@@ -1,15 +1,15 @@
 import * as React from "react";
 import axios from "axios";
 
-import Card from './Card';
+import Person from './Person';
 import falling_down from './assets/down_fall.jpg'
 
-const GET_PERSON = "http://localhost:5107/persons"
+const GET_PERSON = "http://localhost:5106/persons"
 const POSTER_PREURL = ""
 // Function CardList (props) {
 function PersonList(props) {
     const [data, setData] = React.useState([]);
-    
+
     React.useEffect(() => {
         const fetchData = async () => {
             const result = await axios(GET_PERSON);
@@ -44,10 +44,8 @@ function PersonList(props) {
         // React.Fragment syns inte HTML 
         <React.Fragment>
             {/* {data.results.map(movie => <Card title={movie.title} description={movie.description} poster={movie.poster} />)} */}
-            {data.map(item => (
-                <li key={item.objectID}>
-                    <a href={item.url}>{item.email}</a>
-                </li>
+            {data.map(person => (
+                <Person firstName={person.firstName} lastName={person.lastName} email={person.email} />
             ))}
         </React.Fragment>
     );
