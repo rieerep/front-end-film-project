@@ -8,6 +8,7 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
+import axios from 'axios';
 
 import Hero from './Hero';
 import PersonList from './PersonList';

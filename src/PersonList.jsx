@@ -4,7 +4,8 @@ import axios from "axios";
 import Person from './Person';
 import falling_down from './assets/down_fall.jpg'
 
-const GET_PERSON = "http://localhost:5106/persons"
+const GET_PERSON = "https://localhost:7071/persons"
+const api = "http://localhost:5106"
 const POSTER_PREURL = ""
 // Function CardList (props) {
 function PersonList(props) {
@@ -45,7 +46,7 @@ function PersonList(props) {
         <React.Fragment>
             {/* {data.results.map(movie => <Card title={movie.title} description={movie.description} poster={movie.poster} />)} */}
             {data.map(person => (
-                <Person firstName={person.firstName} lastName={person.lastName} email={person.email} />
+                <Person firstName={person.firstName} lastName={person.lastName} email={person.email} id={person.id} />
             ))}
         </React.Fragment>
     );
