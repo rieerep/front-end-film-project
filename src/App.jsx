@@ -10,8 +10,8 @@ import {
 } from "react-router-dom";
 
 import Hero from './Hero';
-import CardList from './CardList';
 import PersonList from './PersonList';
+import Form from './Form';
 
 
 // deklarera style-component
@@ -41,9 +41,11 @@ function App() {
         <StyledPara>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis!</StyledPara>
         <Hero />
         <Switch>
+
           <Route path="/persons">
             <PersonList />
           </Route>
+          <Form />
         </Switch>
         {/* <CardList /> */}
         {/* {myMovies.map(function (movie) { return <Card title={movie.title} description={movie.description} poster={movie.poster} /> })} */}
