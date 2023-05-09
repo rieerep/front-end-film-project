@@ -58,7 +58,7 @@ function PersonDetail(props) {
     //let movieId = params.movieId;
     //console.log(params);
     return data ? <>
-    {data.map}
+        {data.map(genre => (<PersonDetail genre={genre.genre.genreName} />))}
         <h1>Alla filmer</h1>
     </> : <h3>Loading</h3>;
 }

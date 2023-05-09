@@ -13,6 +13,7 @@ import axios from 'axios';
 import Hero from './Hero';
 import PersonList from './PersonList';
 import Form from './Form';
+import PersonDetail from './PersonDetail';
 
 
 // deklarera style-component
@@ -45,6 +46,7 @@ function App() {
 
           <Route path="/persons">
             <PersonList />
+            <PersonDetail />
           </Route>
           <Form />
         </Switch>
