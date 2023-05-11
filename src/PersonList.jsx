@@ -46,7 +46,7 @@ function PersonList(props) {
         <React.Fragment>
             {/* {data.results.map(movie => <Card title={movie.title} description={movie.description} poster={movie.poster} />)} */}
             {data.map(person => (
-                <Person firstName={person.firstName} lastName={person.lastName} email={person.email} id={person.id} />
+                <Person key={person.id} firstName={person.firstName} lastName={person.lastName} email={person.email} id={person.id} />
             ))}
         </React.Fragment>
     );

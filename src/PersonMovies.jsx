@@ -33,11 +33,11 @@ import axios from 'axios';
 
 // om vi har en data.map(genreObject => genreObject.genre.genreName)
 
-// när du gjort detta, skapa en ny komponent PersonMovies, den ska vara väldigt lik PersonDetails, men den ska anropa PersonMovies i API
+// när du gjort detta, skapa en ny komponent PersonMovies, den ska vara väldigt lik PersonMoviess, men den ska anropa PersonMovies i API
 // Den ska mappa och skriva ut filmlänkarna, glöm inte ratint
-function PersonDetail(props) {
+function PersonMovies(props) {
     console.log(props);
-    console.log("Hej från PersonDetail")
+    console.log("Hej från PersonMovies")
     const [data, setData] = React.useState(false);
     // Object destructuring:
     // let { movieId } = useParams();
@@ -46,7 +46,7 @@ function PersonDetail(props) {
 
     React.useEffect(() => {
         const fetchData = async () => {
-            const result = await axios("http://localhost:5106/persongenres/" + props.id);
+            const result = await axios("http://localhost:5106/personmovies/" + props.id);
             console.log(result.data)
             setData(result.data);
         };
@@ -60,8 +60,8 @@ function PersonDetail(props) {
     //let movieId = params.movieId;
     //console.log(params);
     return data ? <>
-        {data.map(genre => <h3 key={genre.genre.id}>{genre.genre.genreName}</h3>)}
+        {data.map(movie => <h3 key={movie.id}>{movie.movies} {movie.rating}</h3>)}
     </> : <h3>Loading</h3>;
 }
 
-export default PersonDetail;
+export default PersonMovies;

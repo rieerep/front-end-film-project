@@ -46,7 +46,6 @@ function App() {
 
           <Route path="/persons">
             <PersonList />
-            <PersonDetail />
           </Route>
           <Form />
         </Switch>
