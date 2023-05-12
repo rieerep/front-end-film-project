@@ -27,6 +27,10 @@ min-height: 100vh;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 `;
 
+const FormStyle = styled.main`
+
+`
+
 const Title = styled.h1`
 font-size: 1em;
 font-family: Georgia, 'Times New Roman', Times, serif;
@@ -48,6 +52,17 @@ function App() {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/persons">Persons</Link></li>
         </ul>
+        <form>
+          <label>Add genre: </label>
+          <textarea required>
+          </textarea>
+          <label>Blog author:</label>
+          <select>
+            <option value='mario'>mario</option>
+            <option value='yoshi'>yoshi</option>
+          </select>
+          <button>Add genre</button>
+        </form>
         <PersonList />
         <Hero />
         <Switch>

@@ -23,24 +23,6 @@ function PersonList(props) {
 
     }, []);
 
-    const myMovies = [
-        {
-            poster: falling_down,
-            description: "Description about movie",
-            title: "Falling down 1"
-        },
-        {
-            poster: falling_down,
-            description: "Description about movie",
-            title: "Falling down 2"
-        },
-        {
-            poster: falling_down,
-            description: "Description about movie",
-            title: "Falling down 3"
-        },
-    ];
-
     return (
         // React.Fragment syns inte HTML 
         <React.Fragment>
