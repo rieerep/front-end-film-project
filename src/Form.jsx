@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 const Form = () => {
     const [movie, setMovie] = React.useState(' ');
+    const [genre, setGenre] = React.useState(' ');
 
     function handleChange(movieName) {
         setMovie(movieName.target.value)
