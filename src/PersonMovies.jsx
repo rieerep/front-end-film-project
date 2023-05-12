@@ -60,6 +60,7 @@ function PersonMovies(props) {
     //let movieId = params.movieId;
     //console.log(params);
     return data ? <>
+        <h1>Movies</h1>
         {data.map(movie => <h3 key={movie.id}>{movie.movies} {movie.rating}</h3>)}
     </> : <h3>Loading</h3>;
 }

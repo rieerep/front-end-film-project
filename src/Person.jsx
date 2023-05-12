@@ -6,16 +6,17 @@ import PersonMovies from "./PersonMovies";
 
 const PersonContainer = styled.div`
 display: flex;
+flex-wrap: wrap;
 flex-direction: column;
-justify-content: space-evenly;
+/* justify-content: space-evenly; */
 align-items: center;
-background: #92e87c;
-border: 5px black;
-min-height: 4em;
-width: 100vw;
+background: #7a7b7a;
+min-height: 2em;
+width: 30vw;
+font-size: 1em;
 margin-bottom: 1em;
 &:hover {
-    background-color: #22331e;
+    background-color: #648a5b;
 };
 `;
 

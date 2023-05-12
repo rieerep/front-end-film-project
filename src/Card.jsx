@@ -9,7 +9,7 @@ justify-content: space-around;
 align-items: center;
 background: red;
 border: 1px black;
-height: 20em;
+height: 10em;
 width: 20em;
 margin-bottom: 1em;
 `;
@@ -24,7 +24,7 @@ function Card(props) {
 
     return (
         <CardContainer>
-             <h1>{props.title}</h1>
+            <h1>{props.title}</h1>
             <CardImage src={props.poster} alt="Falling Down" />
             <p>{props.description}</p>
         </CardContainer>

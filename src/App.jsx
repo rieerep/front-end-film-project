@@ -27,6 +27,12 @@ min-height: 100vh;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 `;
 
+const Title = styled.h1`
+font-size: 1em;
+font-family: Georgia, 'Times New Roman', Times, serif;
+
+
+`;
 const StyledPara = styled.p`
 max-width: 200px;
 `
@@ -35,19 +41,20 @@ function App() {
   return (
     <Router>
       <MainContainer>
-        <h1>Filmsystemet</h1>
+        <Title>
+          <h1>Filmsystemet</h1>
+        </Title>
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/persons">Persons</Link></li>
         </ul>
-        <StyledPara>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis!</StyledPara>
+        <PersonList />
         <Hero />
         <Switch>
-
           <Route path="/persons">
-            <PersonList />
+
           </Route>
-          <Form />
+
         </Switch>
         {/* <CardList /> */}
         {/* {myMovies.map(function (movie) { return <Card title={movie.title} description={movie.description} poster={movie.poster} /> })} */}

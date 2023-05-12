@@ -16,7 +16,7 @@ const Form = () => {
         <>
             <h1>FORM</h1>
             ID:
-            <form onSubmit={hexitandleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <input type="text"
                     value={movie}
                     onChange={handleChange} />
