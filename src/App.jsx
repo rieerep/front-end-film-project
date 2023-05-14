@@ -14,6 +14,8 @@ import Hero from './Hero';
 import PersonList from './PersonList';
 import Form from './Form';
 import PersonDetail from './PersonDetail';
+import DojoForm from './AddGenre';
+import AddGenre from './AddGenre';
 
 
 // deklarera style-component
@@ -29,47 +31,33 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 
 const FormStyle = styled.main`
 
-`
+`;
 
 const Title = styled.h1`
 font-size: 1em;
 font-family: Georgia, 'Times New Roman', Times, serif;
-
-
 `;
+
 const StyledPara = styled.p`
 max-width: 200px;
 `
-// console.log(myMovies)
 function App() {
   return (
     <Router>
       <MainContainer>
         <Title>
-          <h1>Filmsystemet</h1>
+          Filmsystemet
         </Title>
-        <ul>
+        <Form />
+        {/* <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/persons">Persons</Link></li>
-        </ul>
-        <form>
-          <label>Add genre: </label>
-          <textarea required>
-          </textarea>
-          <label>Blog author:</label>
-          <select>
-            <option value='mario'>mario</option>
-            <option value='yoshi'>yoshi</option>
-          </select>
-          <button>Add genre</button>
-        </form>
+        </ul> */}
         <PersonList />
         <Hero />
         <Switch>
           <Route path="/persons">
-
           </Route>
-
         </Switch>
         {/* <CardList /> */}
         {/* {myMovies.map(function (movie) { return <Card title={movie.title} description={movie.description} poster={movie.poster} /> })} */}

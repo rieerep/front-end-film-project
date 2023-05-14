@@ -7,12 +7,12 @@ import PersonMovies from "./PersonMovies";
 const PersonContainer = styled.div`
 display: flex;
 flex-wrap: wrap;
-flex-direction: column;
+flex-direction: row;
 /* justify-content: space-evenly; */
 align-items: center;
 background: #7a7b7a;
 min-height: 2em;
-width: 30vw;
+width: 50vw;
 font-size: 1em;
 margin-bottom: 1em;
 &:hover {
@@ -36,10 +36,10 @@ function Person(props) {
 
     return (
         <PersonContainer onClick={handleClick}>
-
-            <h1 >{props.firstName} {props.lastName}</h1>
-            <p>{props.email}</p>
-            {expanded ? <><PersonDetail id={props.id} /><PersonMovies id={props.id} /></> : null}
+            <ul>            <h4 >User: {props.firstName} {props.lastName}</h4>
+                <p>email: {props.email}</p>
+                {expanded ? <><PersonDetail id={props.id} /><PersonMovies id={props.id} /></> : null}
+            </ul>
         </PersonContainer>
     );
 }
