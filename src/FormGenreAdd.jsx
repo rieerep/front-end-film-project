@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-const Form = () => {
+
+const FormGenreAdd = () => {
     const [movie, setMovie] = useState(' ');
     const [genre, setGenre] = useState(' ');
 
@@ -96,8 +97,7 @@ const Form = () => {
 
     return (
         <>
-            <h1>Form</h1>
-            <label>Add movie</label>
+            <label>Add new favourite genre: </label>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -117,4 +117,4 @@ const Form = () => {
     )
 }
 
-export default Form;
+export default FormGenreAdd;

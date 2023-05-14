@@ -12,10 +12,8 @@ import axios from 'axios';
 
 import Hero from './Hero';
 import PersonList from './PersonList';
-import Form from './Form';
-import PersonDetail from './PersonDetail';
-import DojoForm from './AddGenre';
-import AddGenre from './AddGenre';
+import FormGenreAdd from './FormGenreAdd';
+import FormRatingAdd from './FormRatingAdd';
 
 
 // deklarera style-component
@@ -48,12 +46,13 @@ function App() {
         <Title>
           Filmsystemet
         </Title>
-        <Form />
+        <FormGenreAdd />
         {/* <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/persons">Persons</Link></li>
         </ul> */}
         <PersonList />
+        <FormRatingAdd />
         <Hero />
         <Switch>
           <Route path="/persons">

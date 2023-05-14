@@ -52,8 +52,8 @@ function PersonDetail(props) {
     }, []);
     return data ? <>
         <div>
-            <h4>Genre</h4>
-            {data.map(genre => <h4 key={genre.genre.id}>{genre.genre.genreName}</h4>)}
+            <h3>Favourite genre</h3>
+            {data.map(genre => <p key={genre.genre.id}>{genre.genre.genreName}</p>)}
         </div>
     </> : <h3>Loading</h3>;
 }

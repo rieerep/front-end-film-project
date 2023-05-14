@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-const FormMovieAdd = () => {
+const FormRatingAdd = () => {
     const [movie, setMovie] = useState(' ');
     const [genre, setGenre] = useState(' ');
-    const [rating, setRating] = useState(' ';)
+    const [rating, setRating] = useState(' ');
 
 
     function handleMovieChange(movieName) {
@@ -14,6 +14,11 @@ const FormMovieAdd = () => {
     function handleGenreChange(movieName) {
         console.log(movieName.target.value);
         setGenre(gen.target.value)
+    }
+
+    function handleRatingChange(evt) {
+        console.log(evt.target.value);
+        setRating(evt.target.value)
     }
 
     function handleSubmit(evt) {
@@ -28,7 +33,7 @@ const FormMovieAdd = () => {
 
     return (
         <>
-            <h1>FormMovieAdd</h1>
+            <h1>Add movie</h1>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -37,15 +42,20 @@ const FormMovieAdd = () => {
                     onChange={handleMovieChange}
                 />
                 <label>
-                    Genre
+                    <select value={rating} onChange={handleRatingChange}></select>
                 </label>
-                <select value={allGenres} onChange={handleGenreChange}>
-                    <option value=""> Select a genre </option>
-                    {allGenres.map(genre => (<option value={genre.id}>{genre.name}</option>))}
+                <label>
+                    Rating
+                </label>
+                <select value={ratings} onChange={handleRatingChange}>
+                    <option value=""> Rate your movie! </option>
+                    {ratings.map(ratings => (<option value={rating}>{ratings}</option>))}
                 </select>
+                <button type="submit">Add</button>
+
             </form>
         </>
     )
 }
 
-export default FormMovieAdd;
+export default FormRatingAdd;
