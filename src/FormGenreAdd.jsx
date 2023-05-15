@@ -1,19 +1,21 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 
-const FormGenreAdd = () => {
-    const [movie, setMovie] = useState(' ');
-    const [genre, setGenre] = useState(' ');
+const FormGenreAdd = (props) => {
+    const [movie, setMovie] = useState('');
+    const [genre, setGenre] = useState();
+    const [expanded, setExpanded] = useState(false);
+    console.log(props)
 
-
-    function handleMovieChange(movieName) {
-        console.log(movieName.target.value);
-        setMovie(movieName.target.value)
+    function handleMovieChange(evt) {
+        console.log(evt.target.value);
+        setMovie(evt.target.value)
     }
 
-    function handleGenreChange(movieName) {
-        console.log(movieName.target.value);
-        setGenre(gen.target.value)
+    function handleGenreChange(evt) {
+        console.log(evt.target.value);
+        setGenre(evt.target.value)
     }
 
     function handleSubmit(evt) {
@@ -21,76 +23,90 @@ const FormGenreAdd = () => {
         console.log("YOu enetered" + movie + "in the searchbox")
         console.log("YOu enetered" + genre + "in the searchbox")
 
+        /* {
+        "movies": "Robocop",
+        "personid": 1,
+        "genreid": 1,
+        "rating": 2
+        }*/
         evt.preventDefault()
+        const movieData = {
+            movies: movie ? movie : null,
+            personid: props.id,
+            genreid: genre
+        };
+        axios.post("http://localhost:5106/addlink", movieData).then((response) => {
+            console.log(response.status, response.data);
+        });
     }
 
     const allGenres = [
         {
-            id: 28,
+            id: 1,
             name: "Action"
         },
         {
-            id: 18,
+            id: 2,
             name: "Drama"
         },
         {
-            id: 16,
+            id: 3,
             name: "Animation"
         },
         {
-            id: 27,
+            id: 4,
             name: "Horror"
         },
         {
-            id: 12,
+            id: 5,
             name: "Adventure"
         },
         {
-            id: 80,
+            id: 6,
             name: "Crime"
         },
         {
-            id: 99,
+            id: 7,
             name: "Documentary"
         },
         {
-            id: 10751,
+            id: 8,
             name: "Family"
         },
         {
-            id: 14,
+            id: 9,
             name: "Fantasy"
         },
         {
-            id: 36,
+            id: 10,
             name: "History"
         },
         {
-            id: 10402,
+            id: 11,
             name: "Music"
         },
         {
-            id: 9648,
+            id: 12,
             name: "Mystery"
         },
         {
-            id: 10749,
+            id: 13,
             name: "Romance"
         },
         {
-            id: 878,
+            id: 14,
             name: "Science Fiction"
         },
         {
-            id: 10770,
+            id: 15,
             name: "TV Movie"
         },
         {
-            id: 10752,
+            id: 16,
             name: "War"
         },
         {
-            id: 878,
+            id: 17,
             name: "Science Fiction"
         }
     ]
@@ -108,7 +124,7 @@ const FormGenreAdd = () => {
                 <label>
                     Genre
                 </label>
-                <select value={allGenres} onChange={handleGenreChange}>
+                <select onChange={handleGenreChange}>
                     <option value=""> Select a genre </option>
                     {allGenres.map(genre => (<option value={genre.id}>{genre.name}</option>))}
                 </select>

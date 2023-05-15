@@ -36,8 +36,6 @@ import axios from 'axios';
 // när du gjort detta, skapa en ny komponent PersonMovies, den ska vara väldigt lik PersonMoviess, men den ska anropa PersonMovies i API
 // Den ska mappa och skriva ut filmlänkarna, glöm inte ratint
 function PersonMovies(props) {
-    console.log(props);
-    console.log("Hej från PersonMovies")
     const [data, setData] = React.useState(false);
     // Object destructuring:
     // let { movieId } = useParams();

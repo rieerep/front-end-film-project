@@ -37,8 +37,6 @@ import axios from 'axios';
 // men den ska anropa PersonMovies i API
 // Den ska mappa och skriva ut filmlänkarna, glöm inte ratint
 function PersonDetail(props) {
-    console.log(props);
-    console.log("Hej från PersonDetail")
     const [data, setData] = React.useState(false);
 
     React.useEffect(() => {

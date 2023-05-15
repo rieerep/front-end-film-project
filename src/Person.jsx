@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Route } from "react-router-dom/cjs/react-router-dom.min";
 import styled from "styled-components";
+import axios from "axios";
+
 import PersonDetail from "./PersonDetail";
 import PersonMovies from "./PersonMovies";
 import FormMovieAdd from "./FormMovieAdd";
@@ -36,7 +38,7 @@ function Person(props) {
     const handleClick = () => {
 
         console.log('hello from button you are person with id: ' + props.id)
-        setExpanded(!expanded)
+        setExpanded(true)
     }
 
     return (
@@ -44,7 +46,12 @@ function Person(props) {
             <ul>
                 <h4 >User: {props.firstName} {props.lastName}</h4>
                 <p>email: {props.email}</p>
-                {expanded ? <><PersonDetail id={props.id} /><FormGenreAdd></FormGenreAdd><PersonMovies id={props.id} /><FormMovieAdd /> </> : null}
+                {expanded ? <>
+                    <PersonDetail id={props.id} />
+                    <FormGenreAdd id={props.id}></FormGenreAdd>
+                    <PersonMovies id={props.id} />
+                    <FormMovieAdd />
+                </> : null}
             </ul>
         </PersonContainer>
     );
