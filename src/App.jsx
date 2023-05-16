@@ -34,6 +34,7 @@ const FormStyle = styled.main`
 const Title = styled.h1`
 font-size: 1em;
 font-family: Georgia, 'Times New Roman', Times, serif;
+display: flex;
 `;
 
 const StyledPara = styled.p`

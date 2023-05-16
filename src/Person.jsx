@@ -7,6 +7,7 @@ import PersonDetail from "./PersonDetail";
 import PersonMovies from "./PersonMovies";
 import FormMovieAdd from "./FormMovieAdd";
 import FormGenreAdd from "./FormGenreAdd";
+import FormRatingAdd from "./FormRatingAdd";
 
 const PersonContainer = styled.div`
 display: flex;
@@ -18,19 +19,15 @@ background: #7a7b7a;
 min-height: 2em;
 width: 50vw;
 font-size: 1em;
+margin-top: 1em;
 margin-bottom: 1em;
 border-radius: 0.5em;
-box: '1px 2px 9px #F4AAB9';
 
 &:hover {
     background-color: #648a5b;
 };
 `;
 
-const CardImage = styled.img`
-object-fit: cover;
-height: 10em;
-`;
 
 function Person(props) {
     console.log(props);
@@ -48,9 +45,10 @@ function Person(props) {
                 <p>email: {props.email}</p>
                 {expanded ? <>
                     <PersonDetail id={props.id} />
-                    <FormGenreAdd id={props.id}></FormGenreAdd>
+                    <FormGenreAdd id={props.id} />
                     <PersonMovies id={props.id} />
                     <FormMovieAdd />
+                    <FormRatingAdd id={props.id} />
                 </> : null}
             </ul>
         </PersonContainer>

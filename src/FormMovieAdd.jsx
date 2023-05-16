@@ -94,9 +94,12 @@ const FormMovieAdd = () => {
         }
     ]
 
+    const ratings = [1, 2, 3, 4, 5];
+
+
     return (
         <>
-            <h1>FormMovieAdd</h1>
+            <h1>Add a new movie:</h1>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"

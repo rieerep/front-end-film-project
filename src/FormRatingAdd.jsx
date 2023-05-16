@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import axios from "axios";
 
-const FormRatingAdd = () => {
+const FormRatingAdd = (props) => {
     const [movie, setMovie] = useState(' ');
     const [genre, setGenre] = useState(' ');
     const [rating, setRating] = useState(' ');
@@ -27,6 +28,17 @@ const FormRatingAdd = () => {
         console.log("YOu enetered" + genre + "in the searchbox")
 
         evt.preventDefault()
+
+        evt.preventDefault()
+        const movieData = {
+            movies: movie ? movie : null,
+            personid: props.id,
+            genreid: genre,
+            rating: rating
+        };
+        axios.post("http://localhost:5106/setrating", movieData).then((response) => {
+            console.log(response.status, response.data);
+        });
     }
 
     const ratings = [1, 2, 3, 4, 5];

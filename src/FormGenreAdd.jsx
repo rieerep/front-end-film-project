@@ -115,19 +115,16 @@ const FormGenreAdd = (props) => {
         <>
             <label>Add new favourite genre: </label>
             <form onSubmit={handleSubmit}>
-                <input
+                {/* <input
                     type="text"
                     value={movie}
                     onChange={handleMovieChange}
-                />
-                <button type="submit">ADD!</button>
-                <label>
-                    Genre
-                </label>
+                /> */}
                 <select onChange={handleGenreChange}>
                     <option value=""> Select a genre </option>
                     {allGenres.map(genre => (<option value={genre.id}>{genre.name}</option>))}
                 </select>
+                <button type="submit">ADD!</button>
             </form>
         </>
     )
