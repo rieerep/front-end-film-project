@@ -1,101 +1,130 @@
+import axios from "axios";
 import React, { useState } from "react";
 
-const FormMovieAdd = () => {
+
+const FormMovieAdd = (props) => {
     const [movie, setMovie] = useState(' ');
     const [genre, setGenre] = useState(' ');
+    const [expanded, setExpanded] = useState(false);
+    console.log(props)
 
 
-    function handleMovieChange(movieName) {
-        console.log(movieName.target.value);
-        setMovie(movieName.target.value)
+    function handleMovieChange(evt) {
+        console.log(evt.target.value);
+        setMovie(evt.target.value)
     }
 
-    function handleGenreChange(movieName) {
-        console.log(movieName.target.value);
-        setGenre(gen.target.value)
+    function handleGenreChange(evt) {
+        console.log(evt.target.value);
+        setGenre(evt.target.value)
     }
 
     function handleSubmit(evt) {
         console.log(evt)
         console.log("YOu enetered" + movie + "in the searchbox")
         console.log("YOu enetered" + genre + "in the searchbox")
+        // addMovie(personid, movie)
 
         evt.preventDefault()
+        const movieData = {
+            movies: movie ? movie : null,
+            personId: props.id,
+            genreid: genre
+        };
+        axios.post("http://localhost:5106/addlink", movieData).then((response) => {
+            console.log(response.status, response.data);
+        });
     }
+
+    /* async function addMovie(user, rating, movie) {
+        await axios
+            .post("http://localhost:5106/addgenre"(user, rating, movie))
+            .then(() => {
+                console.log(response.status, response.data);
+
+                console.log('Added');
+            })
+            .catch(() => {
+                console.log('Something went wrong');
+            });
+    } */
 
     const allGenres = [
         {
-            id: 28,
+            id: 1,
             name: "Action"
         },
         {
-            id: 18,
+            id: 2,
             name: "Drama"
         },
         {
-            id: 16,
+            id: 3,
             name: "Animation"
         },
         {
-            id: 27,
+            id: 4,
             name: "Horror"
         },
         {
-            id: 12,
+            id: 5,
             name: "Adventure"
         },
         {
-            id: 80,
+            id: 6,
+            name: "Comedy"
+        },
+        {
+            id: 7,
             name: "Crime"
         },
         {
-            id: 99,
+            id: 8,
             name: "Documentary"
         },
         {
-            id: 10751,
+            id: 9,
             name: "Family"
         },
         {
-            id: 14,
+            id: 10,
             name: "Fantasy"
         },
         {
-            id: 36,
+            id: 11,
             name: "History"
         },
         {
-            id: 10402,
+            id: 12,
             name: "Music"
         },
         {
-            id: 9648,
+            id: 13,
             name: "Mystery"
         },
         {
-            id: 10749,
+            id: 14,
             name: "Romance"
         },
         {
-            id: 878,
+            id: 15,
             name: "Science Fiction"
         },
         {
-            id: 10770,
+            id: 16,
             name: "TV Movie"
         },
         {
-            id: 10752,
+            id: 18,
             name: "War"
         },
         {
-            id: 37,
+            id: 19,
             name: "Western"
         }
     ]
 
     const ratings = [1, 2, 3, 4, 5];
-
 
     return (
         <>
@@ -110,10 +139,11 @@ const FormMovieAdd = () => {
                 <label>
                     Genre
                 </label>
-                <select value={allGenres} onChange={handleGenreChange}>
+                <select onChange={handleGenreChange}>
                     <option value=""> Select a genre </option>
                     {allGenres.map(genre => (<option value={genre.id}>{genre.name}</option>))}
                 </select>
+                <button type="submit">ADD!</button>
             </form>
         </>
     )

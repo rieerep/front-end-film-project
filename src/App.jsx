@@ -10,11 +10,12 @@ import {
 } from "react-router-dom";
 import axios from 'axios';
 
+
 import Hero from './Hero';
 import PersonList from './PersonList';
 import FormGenreAdd from './FormGenreAdd';
 import FormRatingAdd from './FormRatingAdd';
-
+import SecondForm from './SecondForm';
 
 // deklarera style-component
 const MainContainer = styled.main`
@@ -32,8 +33,8 @@ const FormStyle = styled.main`
 `;
 
 const Title = styled.h1`
-font-size: 1em;
-font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: 5em;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 display: flex;
 `;
 
@@ -47,18 +48,18 @@ function App() {
         <Title>
           Filmsystemet
         </Title>
-        <FormGenreAdd />
-        {/* <ul>
+        <ul>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/persons">Persons</Link></li>
-        </ul> */}
-        <PersonList />
-        <FormRatingAdd />
-        <Hero />
+          <li><Link to="/secondform">Add movie</Link></li>
+        </ul>
         <Switch>
-          <Route path="/persons">
+          <Route path="/secondform">
+            <SecondForm />
           </Route>
         </Switch>
+        <PersonList />
+        <Hero />
+
         {/* <CardList /> */}
         {/* {myMovies.map(function (movie) { return <Card title={movie.title} description={movie.description} poster={movie.poster} /> })} */}
         {/* {myMovies.map(movie => <Card title={movie.title} description={movie.description} poster={movie.poster} />)} */}
@@ -67,5 +68,4 @@ function App() {
 
   )
 }
-
 export default App

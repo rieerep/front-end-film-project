@@ -35,7 +35,7 @@ const FormGenreAdd = (props) => {
             personid: props.id,
             genreid: genre
         };
-        axios.post("http://localhost:5106/addlink", movieData).then((response) => {
+        axios.post("http://localhost:5106/addgenre", movieData).then((response) => {
             console.log(response.status, response.data);
         });
     }
@@ -63,51 +63,55 @@ const FormGenreAdd = (props) => {
         },
         {
             id: 6,
-            name: "Crime"
+            name: "Comedy"
         },
         {
             id: 7,
-            name: "Documentary"
+            name: "Crime"
         },
         {
             id: 8,
-            name: "Family"
+            name: "Documentary"
         },
         {
             id: 9,
-            name: "Fantasy"
+            name: "Family"
         },
         {
             id: 10,
-            name: "History"
+            name: "Fantasy"
         },
         {
             id: 11,
-            name: "Music"
+            name: "History"
         },
         {
             id: 12,
-            name: "Mystery"
+            name: "Music"
         },
         {
             id: 13,
-            name: "Romance"
+            name: "Mystery"
         },
         {
             id: 14,
-            name: "Science Fiction"
+            name: "Romance"
         },
         {
             id: 15,
-            name: "TV Movie"
+            name: "Science Fiction"
         },
         {
             id: 16,
+            name: "TV Movie"
+        },
+        {
+            id: 18,
             name: "War"
         },
         {
-            id: 17,
-            name: "Science Fiction"
+            id: 19,
+            name: "Western"
         }
     ]
 

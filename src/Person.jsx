@@ -17,7 +17,7 @@ flex-direction: row;
 align-items: center;
 background: #7a7b7a;
 min-height: 2em;
-width: 50vw;
+width: 25vw;
 font-size: 1em;
 margin-top: 1em;
 margin-bottom: 1em;
@@ -46,8 +46,8 @@ function Person(props) {
                 {expanded ? <>
                     <PersonDetail id={props.id} />
                     <FormGenreAdd id={props.id} />
-                    <PersonMovies id={props.id} />
-                    <FormMovieAdd />
+                    {<PersonMovies id={props.id} />}
+                    <FormMovieAdd id={props.id} />
                     <FormRatingAdd id={props.id} />
                 </> : null}
             </ul>
