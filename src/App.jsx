@@ -23,14 +23,18 @@ display: flex;
 flex-direction: column;
 justify-content: space-around;
 align-items: center;
-background: lightgray;
+background: #F0EDD4;
 min-height: 100vh;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 `;
 
-const FormStyle = styled.main`
-
-`;
+const Header = styled.div`
+background-color: #F9FBE7;
+display: flex;
+justify-content: center;
+min-width: 100%;
+border-top: 0cap;
+`
 
 const Title = styled.h1`
 font-size: 5em;
@@ -45,9 +49,11 @@ function App() {
   return (
     <Router>
       <MainContainer>
-        <Title>
-          Filmsystemet
-        </Title>
+        <Header>
+          <Title>
+            Filmsystemet
+          </Title>
+        </Header>
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/secondform">Add movie</Link></li>

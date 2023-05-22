@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import styled from "styled-components";
 
 
 const FormMovieAdd = (props) => {
@@ -126,9 +127,15 @@ const FormMovieAdd = (props) => {
 
     const ratings = [1, 2, 3, 4, 5];
 
+    const paraPrompt = styled.p`
+    color: #0ae850;
+    font-size: 0.8rem;
+    `;
+
     return (
         <>
-            <h1>Add a new movie:</h1>
+            <h2>Add a new movie:</h2>
+            <paraPrompt>If you leave the movie field empty, you will only add a new favourite genre</paraPrompt>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"

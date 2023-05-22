@@ -15,7 +15,8 @@ flex-wrap: wrap;
 flex-direction: row;
 /* justify-content: space-evenly; */
 align-items: center;
-background: #7a7b7a;
+background: #F0EDD4;
+background-color: #ECCDB4;
 min-height: 2em;
 width: 25vw;
 font-size: 1em;
@@ -24,7 +25,7 @@ margin-bottom: 1em;
 border-radius: 0.5em;
 
 &:hover {
-    background-color: #648a5b;
+    background-color: #FEA1A1;
 };
 `;
 
