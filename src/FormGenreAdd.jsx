@@ -6,6 +6,20 @@ const FormGenreAdd = (props) => {
     const [movie, setMovie] = useState('');
     const [genre, setGenre] = useState();
     const [expanded, setExpanded] = useState(false);
+    const [allGenres, setAllGenres] = React.useState([]);
+
+    React.useEffect(() => {
+        const fetchData = async () => {
+            const result = await axios("https://localhost:7071/genres");
+            console.log(result);
+            setAllGenres(result.data);
+        };
+
+        // console.log(result);
+        fetchData();
+
+    }, []);
+
     console.log(props)
 
     function handleMovieChange(evt) {
@@ -40,81 +54,81 @@ const FormGenreAdd = (props) => {
         });
     }
 
-    const allGenres = [
-        {
-            id: 1,
-            name: "Action"
-        },
-        {
-            id: 2,
-            name: "Drama"
-        },
-        {
-            id: 3,
-            name: "Animation"
-        },
-        {
-            id: 4,
-            name: "Horror"
-        },
-        {
-            id: 5,
-            name: "Adventure"
-        },
-        {
-            id: 6,
-            name: "Comedy"
-        },
-        {
-            id: 7,
-            name: "Crime"
-        },
-        {
-            id: 8,
-            name: "Documentary"
-        },
-        {
-            id: 9,
-            name: "Family"
-        },
-        {
-            id: 10,
-            name: "Fantasy"
-        },
-        {
-            id: 11,
-            name: "History"
-        },
-        {
-            id: 12,
-            name: "Music"
-        },
-        {
-            id: 13,
-            name: "Mystery"
-        },
-        {
-            id: 14,
-            name: "Romance"
-        },
-        {
-            id: 15,
-            name: "Science Fiction"
-        },
-        {
-            id: 16,
-            name: "TV Movie"
-        },
-        {
-            id: 18,
-            name: "War"
-        },
-        {
-            id: 19,
-            name: "Western"
-        }
-    ]
-
+    /*     const allGenres = [
+            {
+                id: 1,
+                name: "Action"
+            },
+            {
+                id: 2,
+                name: "Drama"
+            },
+            {
+                id: 3,
+                name: "Animation"
+            },
+            {
+                id: 4,
+                name: "Horror"
+            },
+            {
+                id: 5,
+                name: "Adventure"
+            },
+            {
+                id: 6,
+                name: "Comedy"
+            },
+            {
+                id: 7,
+                name: "Crime"
+            },
+            {
+                id: 8,
+                name: "Documentary"
+            },
+            {
+                id: 9,
+                name: "Family"
+            },
+            {
+                id: 10,
+                name: "Fantasy"
+            },
+            {
+                id: 11,
+                name: "History"
+            },
+            {
+                id: 12,
+                name: "Music"
+            },
+            {
+                id: 13,
+                name: "Mystery"
+            },
+            {
+                id: 14,
+                name: "Romance"
+            },
+            {
+                id: 15,
+                name: "Science Fiction"
+            },
+            {
+                id: 16,
+                name: "TV Movie"
+            },
+            {
+                id: 18,
+                name: "War"
+            },
+            {
+                id: 19,
+                name: "Western"
+            }
+        ]
+     */
     return (
         <>
             <label>Add new favourite genre: </label>
@@ -126,7 +140,7 @@ const FormGenreAdd = (props) => {
                 /> */}
                 <select onChange={handleGenreChange}>
                     <option value=""> Select a genre </option>
-                    {allGenres.map(genre => (<option value={genre.id}>{genre.name}</option>))}
+                    {allGenres.map(genre => (<option value={genre.id}>{genre.genreName}</option>))}
                 </select>
                 <button type="submit">ADD!</button>
             </form>
